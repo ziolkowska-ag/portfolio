@@ -6,6 +6,10 @@ const Wrapper = styled.div`
   width: 100%;
   height: 100vh;
   position: relative;
+
+  @media (max-width: 1450px) {
+      top: 10%;
+  }
 `
 
 const StyledImg = styled.img`
@@ -15,7 +19,7 @@ const StyledImg = styled.img`
   left: -5%;
   top: -10%;
 
-  @media (max-width: 1335px) {
+  @media (max-width: 1450px) {
     height: 70vh;
     top: -5%;
     left: 0;
@@ -27,16 +31,16 @@ const StyledImg = styled.img`
     left: 0;
   }
 
-  @media (max-width: 505px) {
-    height: 40vh;
-    top: 5%;
-  }
-
-  @media (max-width: 395px) {
-    height: 30vh;
+  @media (max-width: 570px) {
+    height: 35vh;
     top: 5%;
     left: 50%;
     transform: translateX(-50%);
+  }
+
+  @media (max-width: 395px) {
+    height: 25vh;
+    top: 0;
   }
 `
 
@@ -68,7 +72,7 @@ const TextWrapper = styled.div`
 
   @media (max-width: 395px) {
     left: 50%;
-    top: 40%;
+    top: 30%;
     transform: translateX(-50%);
     align-items: center;
   }
@@ -83,7 +87,7 @@ const IntroText = styled.p<{ size?: string }>`
   }
 
   @media (max-width: 395px) {
-    font-size: ${({ size }) => (size ? "1.5rem" : "1rem")};
+    font-size: ${({ size }) => (size ? "1.75rem" : "1.25rem")};
   }
 `
 
