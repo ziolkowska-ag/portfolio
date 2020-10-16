@@ -1,26 +1,30 @@
 import React from "react"
 import styled from "styled-components"
 import Sapiens from "./../../assets/sapiens.png"
-import Quote from "./Quote"
+
 
 const Wrapper = styled.div`
-  width: 100%;
-  height: 100%;
-  position: relative;
-`
+    width: 100%;
+    height: 100vh;
+    position: relative;
+`;
 
 const StyledImg = styled.img`
-  height: 750px;
+  height: 100vh;
   filter: drop-shadow(2px 4px 6px grey);
+  position: absolute;
+  left: -5%;
+  top: -10%;
 `
 
 const TextWrapper = styled.div`
-  position: absolute;
   display: flex;
-  top: 0;
-  right: 20%;
+  width: fit-content;
   flex-direction: column;
   align-items: flex-end;
+  position: absolute;
+  right: 3%;
+  top: 5%;
 `
 
 const IntroText = styled.p<{ size?: string }>`
@@ -35,7 +39,7 @@ interface IDecorativeSection {
 const DecorativeSection = ({ className }: IDecorativeSection) => {
   return (
     <Wrapper>
-      <StyledImg src={Sapiens} />={" "}
+      <StyledImg src={Sapiens} />
       <TextWrapper>
         {/* use the animation of different languages saying hello */}
         <IntroText size="48px">&lt;Hello /&gt;</IntroText>

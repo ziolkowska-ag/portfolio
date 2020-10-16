@@ -9,6 +9,8 @@ import DecorativeSection from "./DecorativeSection"
 const Wrapper = styled.div`
   height: 100vh;
   position: relative;
+  display: flex;
+  flex-direction: column;
 `
 
 const Nav = styled.nav`
@@ -30,12 +32,6 @@ const StyledContact = styled(Contact)`
   margin: 20px;
 `;
 
-const StyledArrow = styled(Arrow)`
-  position: absolute;
-  bottom: 30%;
-  right: 10%;
-`;
-
 const Main = () => {
   return (
     <Wrapper>
@@ -43,7 +39,6 @@ const Main = () => {
         <StyledBurger />
       </Nav>
       <DecorativeSection />
-      <StyledArrow />
       <StyledContact />
     </Wrapper>
   )
