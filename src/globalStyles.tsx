@@ -17,6 +17,10 @@ const GlobalStyle = createGlobalStyle`
   main {
     background-color: #FFFFF0;
   }
+
+  .hide {
+      display: none;
+  }
 `
 
 export default GlobalStyle

@@ -98,6 +98,10 @@ const DecorativeSection = ({ className }: IDecorativeSection) => {
       <TextWrapper>
         {/* use the animation of different languages saying hello */}
         <IntroText size="3rem">&lt;Hello /&gt;</IntroText>
+        <IntroText size="3rem" className="hide">&lt;Hola /&gt;</IntroText>
+        <IntroText size="3rem" className="hide">&lt;Cześć /&gt;</IntroText>
+        <IntroText size="3rem" className="hide">&lt;Ciao /&gt;</IntroText>
+
         <IntroText>I’m Agnieszka,</IntroText>
         <IntroText>a front-end developer</IntroText>
         <IntroText>with a passion</IntroText>

@@ -1,9 +1,9 @@
 import React from "react"
 import styled from "styled-components"
-import Arrow from "../../shared-components/Arrow"
 import Burger from "../../shared-components/burger"
 import Contact from "../../shared-components/contact"
 import DecorativeSection from "./DecorativeSection"
+import Navigation from "./Navigation"
 
 
 const Wrapper = styled.div`
@@ -21,6 +21,11 @@ const Nav = styled.nav`
 const StyledBurger = styled(Burger)`
   margin: 20px;
   cursor: pointer;
+  visibility: hidden;
+
+  @media (max-width: 855px) {
+    visibility: visible;
+  }
 `
 
 const StyledContact = styled(Contact)`
@@ -46,6 +51,7 @@ const Main = () => {
     <Wrapper>
       <Nav>
         <StyledBurger />
+        <Navigation />
       </Nav>
       <DecorativeSection />
       <StyledContact />
