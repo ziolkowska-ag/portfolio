@@ -30,6 +30,15 @@ const StyledContact = styled(Contact)`
   right: 0;
   bottom: 0;
   margin: 20px;
+
+  @media (max-width: 855px) {
+    right: unset;
+    left: 0;
+  }
+
+  @media (max-width: 505px) {
+    display: none;
+  }
 `;
 
 const Main = () => {
