@@ -1,5 +1,7 @@
 import React from "react"
 import styled from "styled-components"
+import { Link } from "gatsby"
+
 
 const StyledList = styled.ul`
   list-style: none;
@@ -16,9 +18,10 @@ const StyledList = styled.ul`
   }
 `
 
-const ListItem = styled.li`
+const ListItem = styled(Link)`
   font-size: 1.75rem;
-  cursor: pointer;
+  text-decoration: none;
+  color: #0E555B;
 `
 
 interface INavigation {
@@ -28,9 +31,9 @@ interface INavigation {
 const Navigation = ({ className }: INavigation) => {
   return (
     <StyledList>
-      <ListItem>HOME</ListItem>
-      <ListItem>ABOUT</ListItem>
-      <ListItem>CONTACT</ListItem>
+      <ListItem to="/">HOME</ListItem>
+      <ListItem to="/about">ABOUT</ListItem>
+      <ListItem to="/contact">CONTACT</ListItem>
     </StyledList>
   )
 }

@@ -1,4 +1,5 @@
-import React from "react"
+import React, { useEffect, useState } from "react"
+import gsap from "gsap"
 import styled from "styled-components"
 import Sapiens from "./../../assets/sapiens.png"
 
@@ -99,9 +100,23 @@ interface IDecorativeSection {
 }
 
 const DecorativeSection = ({ className }: IDecorativeSection) => {
+  const [sapiens, setSapiens] = useState<null | HTMLElement>(null)
+  const timeline = gsap.timeline({ defaults: { ease: "power2.out" } })
+
+  useEffect(() => {
+    if (sapiens) {
+      timeline.fromTo(sapiens, { opacity: 0 }, { opacity: 1, duration: 3 })
+    }
+  }, [])
+
+  // timeline.to(".text", { y: "0%", duration: 1, stagger: 0.25 })
+  // timeline.to(".slider", { y: "-100%", duration: 1.5, delay: 0.5 })
+  // timeline.to(".intro", { y: "-100%", duration: 1 }, "-=1.2")
+  // timeline.fromTo("nav", { opacity: 0 }, { opacity: 1, duration: 1 })
+
   return (
-    <Wrapper>
-      <StyledImg src={Sapiens} />
+    <Wrapper className={className}>
+      <StyledImg src={Sapiens} ref={input => setSapiens(input)} />
       <TextWrapper>
         {/* use the animation of different languages saying hello */}
         <IntroText size="3rem">&lt;Hello /&gt;</IntroText>

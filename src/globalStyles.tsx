@@ -12,10 +12,8 @@ const GlobalStyle = createGlobalStyle`
     color: ${props => (props.theme === "green" ? "#0E555B" : "white")};
     height: 100vh;
     overflow: hidden;
-  }
-
-  main {
     background-color: #FFFFF0;
+
   }
 
   .hide {
