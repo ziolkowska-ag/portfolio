@@ -117,7 +117,7 @@ const DecorativeSection = ({ className }: IDecorativeSection) => {
 
         <IntroText>I’m Agnieszka,</IntroText>
         <IntroText>a front-end developer</IntroText>
-        <IntroText>with a passion</IntroText>
+        <IntroText>with passion</IntroText>
         <IntroText>for simplistic and modern UI</IntroText>
       </TextWrapper>
     </Wrapper>
