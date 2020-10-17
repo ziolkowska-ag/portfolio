@@ -7,8 +7,8 @@ const Wrapper = styled.div`
   height: 100vh;
   position: relative;
 
-  @media (max-width: 1450px) {
-      top: 10%;
+  @media (max-width: 1150px) and (min-width: 1025px) {
+    top: 10%;
   }
 `
 
@@ -16,12 +16,12 @@ const StyledImg = styled.img`
   height: 100vh;
   filter: drop-shadow(2px 4px 6px grey);
   position: absolute;
-  left: -5%;
+  left: -3%;
   top: -10%;
 
   @media (max-width: 1450px) {
-    height: 70vh;
-    top: -5%;
+    height: 80vh;
+    top: 0;
     left: 0;
   }
 
@@ -38,7 +38,7 @@ const StyledImg = styled.img`
     transform: translateX(-50%);
   }
 
-  @media (max-width: 395px) {
+  @media (max-width: 415px) {
     height: 25vh;
     top: 0;
   }
@@ -51,10 +51,9 @@ const TextWrapper = styled.div`
   align-items: flex-end;
   position: absolute;
   right: 3%;
-  top: 5%;
 
   @media (max-width: 1024px) {
-      top: 25%
+    top: 25%;
   }
 
   @media (max-width: 855px) {
@@ -70,7 +69,11 @@ const TextWrapper = styled.div`
     top: 55%;
   }
 
-  @media (max-width: 395px) {
+  @media (max-width: 540px) {
+    top: 35%;
+  }
+
+  @media (max-width: 415px) {
     left: 50%;
     top: 30%;
     transform: translateX(-50%);
@@ -102,9 +105,15 @@ const DecorativeSection = ({ className }: IDecorativeSection) => {
       <TextWrapper>
         {/* use the animation of different languages saying hello */}
         <IntroText size="3rem">&lt;Hello /&gt;</IntroText>
-        <IntroText size="3rem" className="hide">&lt;Hola /&gt;</IntroText>
-        <IntroText size="3rem" className="hide">&lt;Cześć /&gt;</IntroText>
-        <IntroText size="3rem" className="hide">&lt;Ciao /&gt;</IntroText>
+        <IntroText size="3rem" className="hide">
+          &lt;Hola /&gt;
+        </IntroText>
+        <IntroText size="3rem" className="hide">
+          &lt;Cześć /&gt;
+        </IntroText>
+        <IntroText size="3rem" className="hide">
+          &lt;Ciao /&gt;
+        </IntroText>
 
         <IntroText>I’m Agnieszka,</IntroText>
         <IntroText>a front-end developer</IntroText>

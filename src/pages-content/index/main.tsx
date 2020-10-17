@@ -1,7 +1,7 @@
 import React from "react"
 import styled from "styled-components"
 import Burger from "../../shared-components/burger"
-import Contact from "../../shared-components/contact"
+import Socials from "../../shared-components/Socials"
 import DecorativeSection from "./DecorativeSection"
 import Navigation from "./Navigation"
 
@@ -28,24 +28,6 @@ const StyledBurger = styled(Burger)`
   }
 `
 
-const StyledContact = styled(Contact)`
-  height: 50px;
-  cursor: pointer;
-  position: absolute;
-  right: 0;
-  bottom: 0;
-  margin: 20px;
-
-  @media (max-width: 855px) {
-    right: unset;
-    left: 0;
-  }
-
-  @media (max-width: 505px) {
-    display: none;
-  }
-`;
-
 const Main = () => {
   return (
     <Wrapper>
@@ -54,7 +36,7 @@ const Main = () => {
         <Navigation />
       </Nav>
       <DecorativeSection />
-      <StyledContact />
+      <Socials />
     </Wrapper>
   )
 }

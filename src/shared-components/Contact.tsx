@@ -6,7 +6,7 @@ interface IContact {
 
 const Contact = ({ className }: IContact) => {
   return (
-    <a href="mailto:ziolkowska.ag@gmail.com">
+    // <a href="mailto:ziolkowska.ag@gmail.com">
       <svg
         version="1.1"
         x="0px"
@@ -54,7 +54,7 @@ const Contact = ({ className }: IContact) => {
        C16.807,127.458,15.911,128.354,14.807,128.354"
         />
       </svg>
-    </a>
+    // </a>
   )
 }
 
