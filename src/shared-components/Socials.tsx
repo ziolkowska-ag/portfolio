@@ -46,15 +46,16 @@ const StyledLink = styled.a`
 `;
 
 interface ISocials {
-  className?: string
+  className?: string,
+  isWhite?: boolean,
 }
 
-const Socials = ({ className }: ISocials) => {
+const Socials = ({ className, isWhite }: ISocials) => {
 
   return (
     <Wrapper className={className}>
       <StyledLink href="mailto:ziolkowska.ag@gmail.com">
-        <StyledContact />
+        <StyledContact color={isWhite ? "white" : undefined}/>
       </StyledLink>
       <StyledLink href="https://www.linkedin.com/in/agnieszka-ziolkowska/" target="_blank">
         <StyledLinkedIn />
