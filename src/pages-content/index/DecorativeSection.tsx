@@ -1,5 +1,5 @@
-import React, { useEffect, useState } from "react"
-import gsap from "gsap"
+import React, { useEffect, useRef } from "react"
+import gsap, { TweenMax, Power2 } from "gsap"
 import styled from "styled-components"
 import Sapiens from "./../../assets/sapiens.png"
 
@@ -100,36 +100,29 @@ interface IDecorativeSection {
 }
 
 const DecorativeSection = ({ className }: IDecorativeSection) => {
-  const [sapiens, setSapiens] = useState<null | HTMLElement>(null)
-  const timeline = gsap.timeline({ defaults: { ease: "power2.out" } })
+  let sapiens = useRef()
+  let hello = useRef()
+  const tl = gsap.timeline({delay: 1.5, repeat:-1, repeatDelay:1});
+
+  const changeText = () => {
+    tl.fromTo(hello.current, {opacity: 0}, {opacity: 1, textContent: "<Hello />"})
+    tl.fromTo(hello.current, {opacity: 0}, {opacity: 1, textContent: "<Hola />"}, "+=2")
+    tl.fromTo(hello.current, {opacity: 0}, {opacity: 1, textContent: "<Ciao />"}, "+=2")
+    tl.fromTo(hello.current, {opacity: 0}, {opacity: 1, textContent: "<Sault />"}, "+=2")    
+  }
 
   useEffect(() => {
-    if (sapiens) {
-      timeline.fromTo(sapiens, { opacity: 0 }, { opacity: 1, duration: 3 })
-    }
+    TweenMax.fromTo(sapiens.current, 2, { opacity: 0 }, { opacity: 1 })
+    changeText()
   }, [])
-
-  // timeline.to(".text", { y: "0%", duration: 1, stagger: 0.25 })
-  // timeline.to(".slider", { y: "-100%", duration: 1.5, delay: 0.5 })
-  // timeline.to(".intro", { y: "-100%", duration: 1 }, "-=1.2")
-  // timeline.fromTo("nav", { opacity: 0 }, { opacity: 1, duration: 1 })
 
   return (
     <Wrapper className={className}>
-      <StyledImg src={Sapiens} ref={input => setSapiens(input)} />
+      <StyledImg src={Sapiens} ref={input => (sapiens.current = input)} />
       <TextWrapper>
-        {/* use the animation of different languages saying hello */}
-        <IntroText size="3rem">&lt;Hello /&gt;</IntroText>
-        <IntroText size="3rem" className="hide">
-          &lt;Hola /&gt;
+        <IntroText size="3rem" ref={input => (hello.current = input)}>
+          &lt;Hello /&gt;
         </IntroText>
-        <IntroText size="3rem" className="hide">
-          &lt;Cześć /&gt;
-        </IntroText>
-        <IntroText size="3rem" className="hide">
-          &lt;Ciao /&gt;
-        </IntroText>
-
         <IntroText>I’m Agnieszka,</IntroText>
         <IntroText>a front-end developer</IntroText>
         <IntroText>with passion</IntroText>

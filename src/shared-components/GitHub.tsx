@@ -1,10 +1,17 @@
-import React from "react"
+import React, { useRef, useEffect } from "react"
+import { TweenMax } from "gsap"
 
 interface IGitHub {
   className?: string
 }
 
 const GitHub = ({ className }: IGitHub) => {
+  let socials = useRef()
+
+  useEffect(() => {
+    TweenMax.staggerFrom(socials.current, 1, { scale: 0 }, 0.3)
+  }, [])
+
   return (
     <svg
       viewBox="0 0 512 512"
@@ -12,6 +19,9 @@ const GitHub = ({ className }: IGitHub) => {
       width="512pt"
       xmlns="http://www.w3.org/2000/svg"
       className={className}
+      ref={element => {
+        socials.current = element
+      }}
     >
       <path
         d="m512 257c0 120-84.101562 220.5-196 247.5l-30.601562-97.199219h-58.796876l-29.601562 97.199219c-111.898438-27-197-127.5-197-247.5 0-140.699219 115.300781-257 256-257s256 116.300781 256 257zm0 0"

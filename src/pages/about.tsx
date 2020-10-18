@@ -4,7 +4,7 @@ import Layout from "../shared-components/Layout"
 
 export default function About() {
   return (
-    <Layout>
+    <Layout title="ABOUT">
         <div>About</div>
     </Layout>
   )

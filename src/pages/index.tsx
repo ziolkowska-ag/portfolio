@@ -4,7 +4,7 @@ import DecorativeSection from "./../pages-content/index/DecorativeSection"
 
 export default function Home() {
   return (
-    <Layout>
+    <Layout title="HOME">
       <DecorativeSection />
     </Layout>
   )

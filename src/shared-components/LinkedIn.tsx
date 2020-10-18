@@ -1,10 +1,18 @@
-import React from "react"
+import React, { useRef, useEffect } from "react"
+import { TweenMax } from "gsap"
+
 
 interface ILinkedIn {
   className?: string
 }
 
 const LinkedIn = ({ className }: ILinkedIn) => {
+  let socials = useRef()
+
+  useEffect(() => {
+    TweenMax.staggerFrom(
+      socials.current, 1, {scale: 0,},0.3)
+  }, [])
   return (
     <svg
       height="512pt"
@@ -12,6 +20,9 @@ const LinkedIn = ({ className }: ILinkedIn) => {
       width="512pt"
       xmlns="http://www.w3.org/2000/svg"
       className={className}
+      ref={element => {
+        socials.current = element
+      }}
     >
       <path
         d="m512 256c0 31.230469-5.589844 61.15625-15.839844 88.835938-18.609375 50.3125-52.589844 93.183593-96.246094 122.902343-41.011718 27.941407-90.550781 44.261719-143.914062 44.261719-46.914062 0-90.886719-12.621094-128.691406-34.660156-35.734375-20.804688-65.960938-50.027344-87.980469-84.9375-24.917969-39.488282-39.328125-86.269532-39.328125-136.402344 0-54.605469 17.09375-105.230469 46.238281-146.789062 21.542969-30.730469 49.671875-56.515626 82.335938-75.292969 37.523437-21.578125 81.03125-33.917969 127.425781-33.917969 141.386719 0 256 114.613281 256 256zm0 0"
