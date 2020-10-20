@@ -40,6 +40,8 @@ const StyledGithub = styled(GitHub)`
 `
 
 const StyledLink = styled.a`
+  transition: 0.5s ease;
+
   &:hover {
     transform: scale(1.1)
   }

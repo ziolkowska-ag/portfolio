@@ -102,13 +102,32 @@ interface IDecorativeSection {
 const DecorativeSection = ({ className }: IDecorativeSection) => {
   let sapiens = useRef()
   let hello = useRef()
-  const tl = gsap.timeline({delay: 1.5, repeat:-1, repeatDelay:1});
+  const tl = gsap.timeline({ delay: 1.5, repeat: -1, repeatDelay: 2 })
 
   const changeText = () => {
-    tl.fromTo(hello.current, {opacity: 0}, {opacity: 1, textContent: "<Hello />"})
-    tl.fromTo(hello.current, {opacity: 0}, {opacity: 1, textContent: "<Hola />"}, "+=2")
-    tl.fromTo(hello.current, {opacity: 0}, {opacity: 1, textContent: "<Ciao />"}, "+=2")
-    tl.fromTo(hello.current, {opacity: 0}, {opacity: 1, textContent: "<Sault />"}, "+=2")    
+    tl.fromTo(
+      hello.current,
+      { opacity: 0 },
+      { opacity: 1, textContent: "<Hello />" }
+    )
+    tl.fromTo(
+      hello.current,
+      { opacity: 0 },
+      { opacity: 1, textContent: "<Hola />" },
+      "+=2"
+    )
+    tl.fromTo(
+      hello.current,
+      { opacity: 0 },
+      { opacity: 1, textContent: "<Ciao />" },
+      "+=2"
+    )
+    tl.fromTo(
+      hello.current,
+      { opacity: 0 },
+      { opacity: 1, textContent: "<Sault />" },
+      "+=2"
+    )
   }
 
   useEffect(() => {
