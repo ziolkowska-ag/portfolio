@@ -13,6 +13,7 @@ const LinkedIn = ({ className }: ILinkedIn) => {
     TweenMax.staggerFrom(
       socials.current, 1, {scale: 0,},0.3)
   }, [])
+  
   return (
     <svg
       height="512pt"
