@@ -14,7 +14,7 @@ const Wrapper = styled.div`
   top: 50%;
   right: 50%;
   transform: translate(50%, -50%);
-`;
+`
 
 const StyledPicture = styled.img`
   width: 15vw;
@@ -22,10 +22,9 @@ const StyledPicture = styled.img`
   filter: drop-shadow(8px 8px 10px #0e555b);
   margin-right: 70px;
 `
-const AboutMe = styled.div``
-
-const StyledCV = styled(CV)`
-`;
+const AboutMe = styled.div`
+  text-align: right;
+`
 
 export default function About() {
   return (
@@ -35,10 +34,13 @@ export default function About() {
         <AboutMe>
           <h2>Hello, I am Agnieszka</h2>
           <p>I am a front-end developer based in Poland</p>
-          <p>I have experience with bulding React based webapps and websites</p>
+          <p>I have experience with bulding React</p>
+          <p>based webapps and websites</p>
           <p>...</p>
           <p>And here is more about me (dowload CV):</p>
-          <a href={CVFile} download><StyledCV /></a>
+          <a href={CVFile} download>
+            <CV />
+          </a>
         </AboutMe>
       </Wrapper>
     </Layout>
