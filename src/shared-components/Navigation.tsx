@@ -12,6 +12,7 @@ const StyledList = styled.ul`
   position: absolute;
   right: 3%;
   top: 20px;
+  z-index: 999;
 
   @media (max-width: 855px) {
     display: none;
@@ -30,7 +31,7 @@ interface INavigation {
 
 const Navigation = ({ className }: INavigation) => {
   return (
-    <StyledList>
+    <StyledList className={className}>
       <ListItem to="/">HOME</ListItem>
       <ListItem to="/about">ABOUT</ListItem>
       <ListItem to="/contact">CONTACT</ListItem>

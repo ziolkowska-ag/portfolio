@@ -17,6 +17,7 @@ const MainWrapper = styled.div`
 const Nav = styled.nav`
   display: flex;
   justify-content: flex-end;
+  z-index: 99;
 `
 
 const StyledBurger = styled(Burger)`

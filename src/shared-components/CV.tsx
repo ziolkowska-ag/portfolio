@@ -21,9 +21,9 @@ const CV = ({ className }: ICV) => {
           gradientTransform="translate(-136.27 -110.44) rotate(4.65)"
           gradientUnits="userSpaceOnUse"
         >
-          <stop offset="0" stop-color="gray" stop-opacity="0.25" />
-          <stop offset="0.54" stop-color="gray" stop-opacity="0.12" />
-          <stop offset="1" stop-color="gray" stop-opacity="0.1" />
+          <stop offset="0" stopColor="gray" stopOpacity="0.25" />
+          <stop offset="0.54" stopColor="gray" stopOpacity="0.12" />
+          <stop offset="1" stopColor="gray" stopOpacity="0.1" />
         </linearGradient>
         <linearGradient
           id="87908c47-1c47-4a2f-b745-20cb7009bb75"
@@ -50,9 +50,9 @@ const CV = ({ className }: ICV) => {
           gradientTransform="matrix(-1, 0.01, -0.01, -1, 1253.94, 688.13)"
           gradientUnits="userSpaceOnUse"
         >
-          <stop offset="0" stop-opacity="0.12" />
-          <stop offset="0.55" stop-opacity="0.09" />
-          <stop offset="1" stop-opacity="0.02" />
+          <stop offset="0" stopOpacity="0.12" />
+          <stop offset="0.55" stopOpacity="0.09" />
+          <stop offset="1" stopOpacity="0.02" />
         </linearGradient>
         <linearGradient
           id="e8979000-d63e-4fe0-8af1-0dfdd65d3420"
@@ -113,21 +113,21 @@ const CV = ({ className }: ICV) => {
         ry="30.36"
         fill="#fff"
         stroke="#fff"
-        stroke-miterlimit="10"
+        strokeMiterlimit="10"
       />
       <path
         d="M691.68,255.09h0a26.72,26.72,0,0,0-26.55,26.74v20.35a78.17,78.17,0,0,0,53.1,0V281.83A26.72,26.72,0,0,0,691.68,255.09Z"
         transform="translate(-173.24 -65)"
         fill="#fff"
         stroke="#fff"
-        stroke-miterlimit="10"
+        strokeMiterlimit="10"
       />
       <path
         d="M661.33,215.3A29.63,29.63,0,0,1,658.12,200a20.48,20.48,0,0,1,6.68-13.85c4.39-3.77,10.34-5.1,16.09-5.56s11.58-.18,17.24-1.31a36,36,0,0,0,23-15.72c.36,4.45.72,9-.13,13.36s-3.09,8.7-6.87,11c4.58-2.13,4.08,2.87,3.09,5.86,2.27,2.76,7.78,3.22,8.06,6.79s.23,7.26-1.15,10.55.1,9.1-3.44,9.35"
         transform="translate(-173.24 -65)"
         fill="#fff"
         stroke="#fff"
-        stroke-miterlimit="10"
+        strokeMiterlimit="10"
       />
       <path
         d="M715.81,187.26s21,1.85,6.06,33.29"
