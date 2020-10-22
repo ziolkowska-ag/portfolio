@@ -1,9 +1,8 @@
 import React from "react"
 import styled from "styled-components"
 import Layout from "../shared-components/Layout"
-import CV from "../shared-components/CV"
-import Me from "./../assets/ja.jpg"
-import CVFile from "./../assets/other/agnieszka_ziolkowska.pdf"
+import MyPicture from "../pages-content/contact/MyPicture"
+import AboutMe from "../pages-content/contact/AboutMe"
 
 const Wrapper = styled.div`
   display: flex;
@@ -14,34 +13,18 @@ const Wrapper = styled.div`
   top: 50%;
   right: 50%;
   transform: translate(50%, -50%);
-`
 
-const StyledPicture = styled.img`
-  width: 15vw;
-  border-radius: 5%;
-  filter: drop-shadow(8px 8px 10px #0e555b);
-  margin-right: 70px;
-`
-const AboutMe = styled.div`
-  text-align: right;
+  @media (max-width: 570px) {
+    flex-direction: column;
+  }
 `
 
 export default function About() {
   return (
     <Layout title="ABOUT">
       <Wrapper>
-        <StyledPicture src={Me} alt="Photo of the author" />
-        <AboutMe>
-          <h2>Hello, I am Agnieszka</h2>
-          <p>I am a front-end developer based in Poland</p>
-          <p>I have experience with bulding React</p>
-          <p>based webapps and websites</p>
-          <p>...</p>
-          <p>And here is more about me (dowload CV):</p>
-          <a href={CVFile} download>
-            <CV />
-          </a>
-        </AboutMe>
+        <MyPicture />
+        <AboutMe />
       </Wrapper>
     </Layout>
   )
