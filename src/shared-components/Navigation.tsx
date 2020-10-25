@@ -1,6 +1,6 @@
 import React from "react"
 import styled from "styled-components"
-import { Link } from "gatsby"
+import AniLink from "gatsby-plugin-transition-link/AniLink"
 
 
 const StyledList = styled.ul`
@@ -19,7 +19,7 @@ const StyledList = styled.ul`
   }
 `
 
-const ListItem = styled(Link)`
+const ListItem = styled(AniLink)`
   font-size: 1.75rem;
   text-decoration: none;
   color: #0E555B;
@@ -32,9 +32,9 @@ interface INavigation {
 const Navigation = ({ className }: INavigation) => {
   return (
     <StyledList className={className}>
-      <ListItem to="/">HOME</ListItem>
-      <ListItem to="/about">ABOUT</ListItem>
-      <ListItem to="/contact">CONTACT</ListItem>
+      <ListItem paintDrip to="/" hex="#0E555B">HOME</ListItem>
+      <ListItem paintDrip to="/about" hex="#0E555B">ABOUT</ListItem>
+      <ListItem paintDrip to="/contact" hex="#0E555B">CONTACT</ListItem>
     </StyledList>
   )
 }
