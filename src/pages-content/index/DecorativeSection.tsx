@@ -1,7 +1,7 @@
 import React, { useEffect, useRef } from "react"
-import gsap, { TweenMax, Power2 } from "gsap"
+import gsap from "gsap"
 import styled from "styled-components"
-import Sapiens from "./../../assets/sapiens.png"
+import Sapiens from "./Sapiens"
 
 const Wrapper = styled.div`
   width: 100%;
@@ -10,38 +10,6 @@ const Wrapper = styled.div`
 
   @media (max-width: 1150px) and (min-width: 1025px) {
     top: 10%;
-  }
-`
-
-const StyledImg = styled.img`
-  height: 100vh;
-  filter: drop-shadow(2px 4px 6px grey);
-  position: absolute;
-  left: -3%;
-  top: -10%;
-
-  @media (max-width: 1450px) {
-    height: 80vh;
-    top: 0;
-    left: 0;
-  }
-
-  @media (max-width: 1150px) {
-    height: 50vh;
-    top: -5%;
-    left: 0;
-  }
-
-  @media (max-width: 570px) {
-    height: 35vh;
-    top: 5%;
-    left: 50%;
-    transform: translateX(-50%);
-  }
-
-  @media (max-width: 415px) {
-    height: 25vh;
-    top: 0;
   }
 `
 
@@ -100,7 +68,6 @@ interface IDecorativeSection {
 }
 
 const DecorativeSection = ({ className }: IDecorativeSection) => {
-  let sapiens = useRef()
   let hello = useRef()
   const tl = gsap.timeline({ delay: 1.5, repeat: -1, repeatDelay: 2 })
 
@@ -131,13 +98,12 @@ const DecorativeSection = ({ className }: IDecorativeSection) => {
   }
 
   useEffect(() => {
-    TweenMax.fromTo(sapiens.current, 2, { opacity: 0 }, { opacity: 1 })
     changeText()
   }, [])
 
   return (
     <Wrapper className={className}>
-      <StyledImg src={Sapiens} ref={input => (sapiens.current = input)} />
+      <Sapiens />
       <TextWrapper>
         <IntroText size="3rem" ref={input => (hello.current = input)}>
           &lt;Hello /&gt;
