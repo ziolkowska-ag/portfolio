@@ -6,6 +6,7 @@ import pic from "./../../assets/sapiens.png"
 const StyledImg = styled.img`
   height: 95vh;
   filter: drop-shadow(2px 4px 6px grey);
+
   position: absolute;
   left: -3%;
   top: -10%;
@@ -34,13 +35,12 @@ const StyledImg = styled.img`
     top: 0;
   }
 `
-
 interface ISapiens {
   className?: string
 }
 
 const Sapiens = ({ className }: ISapiens) => {
-  let sapiens = useRef();
+  let sapiens = useRef()
 
   useEffect(() => {
     TweenMax.fromTo(sapiens.current, 2, { opacity: 0 }, { opacity: 1 })
