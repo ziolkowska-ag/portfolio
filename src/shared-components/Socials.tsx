@@ -39,32 +39,17 @@ const StyledGithub = styled(GitHub)`
   cursor: pointer;
 `
 
-const StyledLink = styled.a`
-  transition: 0.5s ease;
-
-  &:hover {
-    transform: scale(1.2)
-  }
-`;
-
 interface ISocials {
-  className?: string,
-  isWhite?: boolean,
+  className?: string
+  isWhite?: boolean
 }
 
 const Socials = ({ className, isWhite }: ISocials) => {
-
   return (
     <Wrapper className={className}>
-      <StyledLink href="mailto:ziolkowska.ag@gmail.com">
-        <StyledContact color={isWhite ? "white" : undefined}/>
-      </StyledLink>
-      <StyledLink href="https://www.linkedin.com/in/agnieszka-ziolkowska/" target="_blank">
-        <StyledLinkedIn />
-      </StyledLink>
-      <StyledLink href="https://github.com/ziolkowska-ag" target="_blank">
-        <StyledGithub />
-      </StyledLink>
+      <StyledContact color={isWhite ? "white" : undefined} />
+      <StyledLinkedIn />
+      <StyledGithub />
     </Wrapper>
   )
 }
