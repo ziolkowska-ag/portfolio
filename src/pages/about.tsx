@@ -1,8 +1,8 @@
 import React from "react"
 import styled from "styled-components"
 import Layout from "../shared-components/Layout"
-import MyPicture from "../pages-content/contact/MyPicture"
-import AboutMe from "../pages-content/contact/AboutMe"
+import MyPicture from "../pages-content/about/MyPicture"
+import AboutMe from "../pages-content/about/AboutMe"
 
 const Wrapper = styled.div`
   display: flex;

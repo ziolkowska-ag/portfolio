@@ -1,6 +1,6 @@
 import React from "react"
 import styled from "styled-components"
-import ReactIcon from "./../../shared-components/React"
+import ReactIcon from "../../shared-components/React"
 import Me from "./../../assets/ja.jpg"
 
 const Wrapper = styled.div`
