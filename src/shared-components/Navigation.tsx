@@ -26,7 +26,6 @@ const ListItem = styled(AniLink)`
 
   &.active {
     border-top: 0.1px solid #0e555b;
-
   }
 
   &:hover {
