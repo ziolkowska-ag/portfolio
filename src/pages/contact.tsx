@@ -5,7 +5,7 @@ import ContactContent from '../pages-content/contact/index';
 
 export default function Contact() {
   return (
-    <Layout title="CONTACT">
+    <Layout title="CONTACT" hideSocials>
       <ContactContent />
     </Layout>
   )
