@@ -36,5 +36,10 @@
   },
   "bugs": {
     "url": "https://github.com/gatsbyjs/gatsby/issues"
+  },
+  "eslintConfig": {
+    "rules": {
+      "no-submodule-imports": [true, "gatsby-plugin-transition-link"]
+    }
   }
 }

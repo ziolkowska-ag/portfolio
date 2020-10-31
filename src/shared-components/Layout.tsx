@@ -70,11 +70,12 @@ const ListItem = styled(Link)`
 `
 
 interface ILayout {
-  children: React.ReactNode
-  title: string
+  children: React.ReactNode,
+  title: string,
+  hideSocials?: boolean,
 }
 
-const Layout = ({ children, title }: ILayout) => {
+const Layout = ({ children, title, hideSocials = false }: ILayout) => {
   const [openMenu, setIsOpenMenu] = useState(false);
 
   return (
@@ -119,7 +120,7 @@ const Layout = ({ children, title }: ILayout) => {
         <Navigation />
       </Nav>
       {children}
-      <Socials isWhite={openMenu && document.body.offsetWidth > 400} />
+      {!hideSocials && <Socials isWhite={openMenu && document.body.offsetWidth > 400} />}
     </MainWrapper>
   )
 }
