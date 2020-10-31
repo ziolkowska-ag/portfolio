@@ -60,10 +60,6 @@ const Layout = ({ children, title }: ILayout) => {
         <meta charSet="utf-8" />
         <title>Portfolio | {title}</title>
         <link
-          href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100&display=swap"
-          rel="stylesheet"
-        />
-        <link
           rel="apple-touch-icon"
           sizes="180x180"
           href="favicons/apple-touch-icon.png"
