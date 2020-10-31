@@ -1,11 +1,34 @@
 import React, { useState } from "react"
-import styled from "styled-components"
+import styled, { createGlobalStyle } from "styled-components"
+import "../fonts/fonts.css"
 import { Link } from "gatsby"
-import GlobalStyle from "../globalStyles"
 import { Helmet } from "react-helmet"
 import Navigation from "./Navigation"
 import Burger from "./Burger"
 import Socials from "./Socials"
+
+
+const GlobalStyle = createGlobalStyle`
+
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat-Thin', sans-serif;
+  }
+
+  body {
+    color: ${props => (props.theme === "green" ? "#0E555B" : "white")};
+    height: 100vh;
+    overflow: hidden;
+    background-color: #FFFFF0;
+
+  }
+
+  .hide {
+      display: none;
+  }
+`
 
 const MainWrapper = styled.div`
   height: 100vh;

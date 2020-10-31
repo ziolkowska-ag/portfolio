@@ -1,0 +1,10 @@
+@font-face {
+    font-family: 'Montserrat-Thin';
+    src:
+      local('Montserrat-Thin'), 
+      url('Montserrat-Thin.ttf') format("ttf"),
+      url('Montserrat-Thin.woff') format("woff"),
+      url('Montserrat-Thin.woff2') format("woff2");
+      font-style: normal;
+      font-weight: 100;
+  }
