@@ -1,7 +1,6 @@
 import React, { useRef, useEffect } from "react"
 import { TweenMax } from "gsap"
 import StyledLink from "./StyledLink"
-import Tooltip from "./Tooltip"
 
 interface ILinkedIn {
   className?: string

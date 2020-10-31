@@ -39,7 +39,6 @@
   },
   "eslintConfig": {
     "rules": {
-      "no-submodule-imports": [true, "gatsby-plugin-transition-link"]
     }
   }
 }
