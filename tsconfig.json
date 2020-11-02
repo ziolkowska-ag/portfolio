@@ -11,8 +11,8 @@
       "noUnusedLocals": false,
       "allowJs": true,
       "moduleResolution": "node",
-      "no-submodule-imports": [true, "gatsby-plugin-transition-link"]
     },
     "exclude": ["node_modules", "public", ".cache"],
     "include": ["./src/**/*"],
+    "no-submodule-imports": [true, "gatsby-plugin-transition-link"]
   }
