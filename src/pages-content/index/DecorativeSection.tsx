@@ -68,7 +68,7 @@ interface IDecorativeSection {
 }
 
 const DecorativeSection = ({ className }: IDecorativeSection) => {
-  let hello = useRef()
+  let hello = useRef() as React.MutableRefObject<HTMLInputElement>
   const tl = gsap.timeline({ delay: 1.5, repeat: -1, repeatDelay: 2 })
 
   const changeText = () => {
@@ -105,7 +105,10 @@ const DecorativeSection = ({ className }: IDecorativeSection) => {
     <Wrapper className={className}>
       <Sapiens />
       <TextWrapper>
-        <IntroText size="3rem" ref={input => (hello.current = input)}>
+        <IntroText
+          size="3rem"
+          ref={(element: HTMLInputElement) => (hello.current = element)}
+        >
           &lt;Hello /&gt;
         </IntroText>
         <IntroText>I’m Agnieszka,</IntroText>

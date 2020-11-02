@@ -4,7 +4,7 @@ interface IErrorCompotent {
   className?: string
 }
 
-const ErrorCompotent = ({ className }: ErrorCompotent) => {
+const ErrorCompotent = ({ className }: IErrorCompotent) => {
   return (
     <svg
       id="fd59ce54-f850-4dfc-bc34-dd7d379d600e"

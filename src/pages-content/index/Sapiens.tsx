@@ -1,6 +1,7 @@
 import React, { useEffect, useRef } from "react"
 import { TweenMax } from "gsap"
 import styled from "styled-components"
+// @ts-ignore - temp solution 
 import pic from "./../../assets/sapiens.png"
 
 const StyledImg = styled.img`
@@ -40,7 +41,7 @@ interface ISapiens {
 }
 
 const Sapiens = ({ className }: ISapiens) => {
-  let sapiens = useRef()
+  let sapiens = useRef() as React.MutableRefObject<HTMLImageElement>
 
   useEffect(() => {
     TweenMax.fromTo(sapiens.current, 2, { opacity: 0 }, { opacity: 1 })
@@ -49,7 +50,7 @@ const Sapiens = ({ className }: ISapiens) => {
   return (
     <StyledImg
       src={pic}
-      ref={input => (sapiens.current = input)}
+      ref={(element: HTMLImageElement) => (sapiens.current = element)}
       className={className}
     />
   )

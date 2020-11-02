@@ -1,5 +1,5 @@
 import React, { useRef, useEffect } from "react"
-import { TweenMax } from "gsap"
+import gsap from "gsap"
 import StyledLink from "./StyledLink"
 
 interface ILinkedIn {
@@ -7,10 +7,15 @@ interface ILinkedIn {
 }
 
 const LinkedIn = ({ className }: ILinkedIn) => {
-  let socials = useRef()
+  let socials = useRef() as React.MutableRefObject<SVGSVGElement>
+  const timeline = gsap.timeline()
 
   useEffect(() => {
-    TweenMax.staggerFrom(socials.current, 1, { scale: 0 }, 0.3)
+    timeline.fromTo(
+      socials.current,
+      { scale: 0 },
+      { duration: 1, scale: 1, stagger: 0.2 }
+    )
   }, [])
 
   return (
@@ -24,7 +29,7 @@ const LinkedIn = ({ className }: ILinkedIn) => {
           width="512pt"
           xmlns="http://www.w3.org/2000/svg"
           className={className}
-          ref={element => {
+          ref={(element: SVGSVGElement) => {
             socials.current = element
           }}
         >

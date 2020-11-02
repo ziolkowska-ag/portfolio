@@ -18,9 +18,11 @@
     "@types/styled-components": "^5.1.4",
     "gatsby": "^2.24.79",
     "gatsby-plugin-react-helmet": "^3.3.14",
+    "gatsby-plugin-sharp": "^2.7.0",
     "gatsby-plugin-transition-link": "^1.20.5",
     "gatsby-plugin-typescript": "^2.4.22",
     "gatsby-source-filesystem": "^2.3.11",
+    "gatsby-transformer-sharp": "^2.5.21",
     "gsap": "^3.5.1",
     "react": "^16.12.0",
     "react-dom": "^16.12.0",
@@ -38,7 +40,6 @@
     "url": "https://github.com/gatsbyjs/gatsby/issues"
   },
   "eslintConfig": {
-    "rules": {
-    }
+    "rules": {}
   }
 }

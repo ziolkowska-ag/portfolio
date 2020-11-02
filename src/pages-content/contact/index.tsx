@@ -44,25 +44,25 @@ const StyledGit = styled(GitHub)`
 `
 
 const ContactContant = () => {
-  let contact = useRef()
-  let linked = useRef()
-  let github = useRef()
+  let contact = useRef() as React.MutableRefObject<HTMLInputElement>
+  let linked = useRef() as React.MutableRefObject<HTMLInputElement>
+  let github = useRef() as React.MutableRefObject<HTMLInputElement>
 
   useEffect(() => {
     TweenMax.fromTo(
-      contact,
+      contact.current,
       2,
       { opacity: "0", x: "150" },
       { opacity: "1", x: "0" }
     )
     TweenMax.fromTo(
-      linked,
+      linked.current,
       2,
       { opacity: "0", x: "-150" },
       { opacity: "1", x: "0" },
     )
     TweenMax.fromTo(
-      github,
+      github.current,
       2,
       { opacity: "0", x: "150" },
       { opacity: "1", x: "0" }
@@ -73,8 +73,8 @@ const ContactContant = () => {
     <MainWrapper>
       <Wrapper>
         <p
-          ref={element => {
-            contact = element
+          ref={(element: HTMLInputElement)=> {
+            contact.current = element
           }}
         >
           Contact me here:
@@ -83,8 +83,8 @@ const ContactContant = () => {
       </Wrapper>
       <Wrapper>
         <p
-          ref={element => {
-            linked = element
+          ref={(element: HTMLInputElement) => {
+            linked.current = element
           }}
         >
           or here:
@@ -93,8 +93,8 @@ const ContactContant = () => {
       </Wrapper>
       <Wrapper>
         <p
-          ref={element => {
-            github = element
+          ref={(element: HTMLInputElement) => {
+            github.current = element
           }}
         >
           Or find me here:

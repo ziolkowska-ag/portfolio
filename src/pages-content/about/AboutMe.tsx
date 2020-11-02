@@ -1,6 +1,7 @@
 import React from "react"
 import styled from "styled-components"
 import CV from "../../shared-components/CV"
+// @ts-ignore - temp solution 
 import CVFile from "./../../assets/other/agnieszka_ziolkowska.pdf"
 
 

@@ -1,5 +1,5 @@
 import React, { useRef, useEffect } from "react"
-import { TweenMax } from "gsap"
+import gsap from "gsap"
 import StyledLink from "./StyledLink"
 
 interface IContact {
@@ -8,10 +8,15 @@ interface IContact {
 }
 
 const Contact = ({ className, color }: IContact) => {
-  let socials = useRef()
+  let socials = useRef() as React.MutableRefObject<SVGSVGElement>
+  const timeline = gsap.timeline()
 
   useEffect(() => {
-    TweenMax.staggerFrom(socials.current, 1, { scale: 0 }, 0.3)
+    timeline.fromTo(
+      socials.current,
+      { scale: 0 },
+      { duration: 1, scale: 1, stagger: 0.2 }
+    )
   }, [])
 
   return (
@@ -23,7 +28,7 @@ const Contact = ({ className, color }: IContact) => {
         viewBox="0 0 203.97 198.38"
         className={className}
         xmlns="http://www.w3.org/2000/svg"
-        ref={element => {
+        ref={(element: SVGSVGElement) => {
           socials.current = element
         }}
       >

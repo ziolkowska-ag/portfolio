@@ -6,7 +6,7 @@ interface IReact {
 }
 
 const ReactIcon = ({ className }: IReact) => {
-  let icon = useRef()
+  let icon = useRef() as React.MutableRefObject<SVGSVGElement>
 
   useEffect(() => {
     TweenMax.to(icon, 3, {
@@ -23,8 +23,8 @@ const ReactIcon = ({ className }: IReact) => {
       viewBox="0 0 600 600"
       xmlns="http://www.w3.org/2000/svg"
       className={className}
-      ref={element => {
-        icon = element
+      ref={(element: SVGSVGElement) => {
+        icon.current = element
       }}
     >
       <circle cx="299.5" cy="299.6" r="50.2" fill="#0e555b" />

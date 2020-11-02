@@ -1,5 +1,6 @@
 import React from "react"
 import styled from "styled-components"
+// @ts-ignore - temp solution 
 import AniLink from "gatsby-plugin-transition-link/AniLink"
 
 const StyledList = styled.ul`
