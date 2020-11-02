@@ -1,5 +1,5 @@
 import React, { useRef, useEffect } from "react"
-import { TweenMax, Linear } from "gsap"
+import gsap, { Linear } from "gsap"
 
 interface IReact {
   className?: string
@@ -7,9 +7,10 @@ interface IReact {
 
 const ReactIcon = ({ className }: IReact) => {
   let icon = useRef() as React.MutableRefObject<SVGSVGElement>
+  const timeline = gsap.timeline()
 
   useEffect(() => {
-    TweenMax.to(icon, 3, {
+    timeline.to(icon.current, 3, {
       rotation: "360",
       ease: Linear.easeIn,
       repeat: -1,
