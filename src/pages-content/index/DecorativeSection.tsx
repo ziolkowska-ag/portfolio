@@ -1,5 +1,5 @@
 import React, { useEffect, useRef } from "react"
-import gsap from "gsap"
+import gsap, { TweenMax } from "gsap"
 import styled from "styled-components"
 import Sapiens from "./Sapiens"
 
@@ -19,6 +19,7 @@ const TextWrapper = styled.div`
   flex-direction: column;
   align-items: flex-end;
   position: absolute;
+  top: 20%;
   right: 3%;
 
   @media (max-width: 1024px) {
@@ -62,59 +63,63 @@ const IntroText = styled.p<{ size?: string }>`
     font-size: ${({ size }) => (size ? "1.75rem" : "1.25rem")};
   }
 `
+const SpecialIntroText = styled.p<{ withBg: boolean }>`
+  background: ${({ withBg }) => (withBg ? "#0e555b" : "")};
+  color: ${({ withBg }) => (withBg ? "#e0e0e0" : "#0e555b")};
+  text-align: end;
+  font-size: 5em;
+  text-transform: uppercase;
+  line-height: initial;
+  letter-spacing: 0.3em;
+  word-spacing: 9999999px;
+  padding: 0 10px;
+  max-width: 45vw;
+  border-bottom: ${({ withBg }) => (withBg ? "none" : "1px solid #0e555b")};
+`
 
 interface IDecorativeSection {
   className?: string
 }
 
 const DecorativeSection = ({ className }: IDecorativeSection) => {
-  let hello = useRef() as React.MutableRefObject<HTMLInputElement>
-  const tl = gsap.timeline({ delay: 1.5, repeat: -1, repeatDelay: 2 })
-
-  const changeText = () => {
-    tl.fromTo(
-      hello.current,
-      { opacity: 0 },
-      { opacity: 1, textContent: "<Hello />" }
-    )
-    tl.fromTo(
-      hello.current,
-      { opacity: 0 },
-      { opacity: 1, textContent: "<Hola />" },
-      "+=2"
-    )
-    tl.fromTo(
-      hello.current,
-      { opacity: 0 },
-      { opacity: 1, textContent: "<Ciao />" },
-      "+=2"
-    )
-    tl.fromTo(
-      hello.current,
-      { opacity: 0 },
-      { opacity: 1, textContent: "<Sault />" },
-      "+=2"
-    )
-  }
+  let agnieszka = useRef() as React.MutableRefObject<HTMLInputElement>
+  let ziolkowska = useRef() as React.MutableRefObject<HTMLInputElement>
 
   useEffect(() => {
-    changeText()
+    TweenMax.fromTo(
+      agnieszka.current,
+      2,
+      { opacity: "0", x: "150" },
+      { opacity: "1", x: "0" }
+    )
+    TweenMax.fromTo(
+      ziolkowska.current,
+      2,
+      { opacity: "0", x: "-150" },
+      { opacity: "1", x: "0" }
+    )
   }, [])
 
   return (
     <Wrapper className={className}>
       <Sapiens />
       <TextWrapper>
-        <IntroText
-          size="3rem"
-          ref={(element: HTMLInputElement) => (hello.current = element)}
+        <SpecialIntroText
+          withBg
+          ref={(element: HTMLInputElement) => {
+            agnieszka.current = element
+          }}
         >
-          &lt;Hello /&gt;
-        </IntroText>
-        <IntroText>I’m Agnieszka,</IntroText>
+          Agnieszka
+        </SpecialIntroText>
+        <SpecialIntroText
+          ref={(element: HTMLInputElement) => {
+            ziolkowska.current = element
+          }}
+        >
+          Ziolkowska
+        </SpecialIntroText>
         <IntroText>a front-end developer</IntroText>
-        <IntroText>with passion</IntroText>
-        <IntroText>for simplistic and modern UI</IntroText>
       </TextWrapper>
     </Wrapper>
   )
