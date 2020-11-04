@@ -14,7 +14,6 @@ module.exports = {
   plugins: [
     'gatsby-plugin-react-helmet',
     'gatsby-plugin-transition-link',
-    'gatsby-plugin-sharp',
     {
       resolve: 'gatsby-plugin-typescript',
       options: {
