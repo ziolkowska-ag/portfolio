@@ -12,10 +12,9 @@ const Wrapper = styled.div`
 `
 
 const StyledPicture = styled.img`
-  max-width: 200px;
+  max-width: 250px;
   border-radius: 15%;
   filter: drop-shadow(8px 8px 10px #0e555b);
-  margin-right: 40px;
 
   @media (max-width: 570px) {
     margin: 10px auto;
