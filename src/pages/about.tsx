@@ -1,6 +1,5 @@
 import React from "react"
 import styled from "styled-components"
-import useWindowWidth from "../hooks/useWinWidth"
 import MyPicture from "../pages-content/about/MyPicture"
 import AboutMe from "../pages-content/about/AboutMe"
 import Layout from "../shared-components/Layout"
@@ -31,20 +30,14 @@ const StyledSocials = styled(Socials)`
 `
 
 export default function About() {
-  const windowSize = useWindowWidth()
-
   return (
     // temporary solution for socials section, waiting to implements redux/ or other solution
     <Layout title="ABOUT" hideSocials>
-      {windowSize !== 0 && (
-        <>
-          <Wrapper>
-            <MyPicture />
-            <AboutMe />
-          </Wrapper>
-          <StyledSocials />
-        </>
-      )}
+      <Wrapper>
+        <MyPicture />
+        <AboutMe />
+      </Wrapper>
+      <StyledSocials />
     </Layout>
   )
 }

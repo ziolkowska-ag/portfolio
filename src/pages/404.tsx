@@ -1,6 +1,5 @@
 import React from "react"
 import styled from "styled-components"
-import useWindowWidth from "../hooks/useWinWidth"
 import Layout from "../shared-components/Layout"
 import ErrorCompotent from "../shared-components/ErrorCompotent"
 
@@ -10,13 +9,9 @@ const StyledErrorCompotent = styled(ErrorCompotent)`
 `
 
 export default function ErrorPage() {
-  const windowSize = useWindowWidth()
-
   return (
     <Layout title="404">
-      {windowSize !== 0 && (
       <StyledErrorCompotent />
-      )}
     </Layout>
   )
 }
