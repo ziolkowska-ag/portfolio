@@ -26,14 +26,13 @@ const StyledImg = styled.img`
 
   @media (max-width: 570px) {
     height: 35vh;
-    top: 5%;
+    top: 10%;
     left: 50%;
     transform: translateX(-50%);
   }
 
   @media (max-width: 415px) {
-    height: 25vh;
-    top: 0;
+    height: 30vh;
   }
 `
 interface ISapiens {

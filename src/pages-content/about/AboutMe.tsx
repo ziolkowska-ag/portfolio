@@ -2,7 +2,7 @@ import React from "react"
 import styled from "styled-components"
 import CV from "../../shared-components/CV"
 // @ts-ignore - temp solution
-import CVFile from "./../../assets/other/agnieszka_ziolkowska.pdf"
+import CVFile from "./../../assets/other/agnieszka_ziolkowska_cv.pdf"
 
 const Wrapper = styled.div`
   text-align: center;
@@ -36,6 +36,11 @@ const CVWrapper = styled.div`
   width: 200px;
   text-align: right;
 
+  @media (max-width: 570px) {
+    margin: 40px 0 70px;
+    text-align: center;
+  }
+
   a {
     color: #0e555b;
     text-decoration: none;
@@ -66,8 +71,8 @@ const AboutMe = () => {
         <p>.. and all that while knowing how to <HighlightedText>Scrum</HighlightedText></p>
       </Wrapper>
       <CVWrapper>
-        <a href={CVFile} download>
-          <p>You can download my <HighlightedText>resume</HighlightedText> here:</p>
+        <a href={CVFile} target="_blank">
+          <p>You can peek at my <HighlightedText>resume</HighlightedText> here:</p>
           <CV />
         </a>
       </CVWrapper>

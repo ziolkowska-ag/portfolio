@@ -15,7 +15,8 @@ const Wrapper = styled.div`
 
 const TextWrapper = styled.div`
   display: flex;
-  width: fit-content;
+  height: fit-content;
+  width: 80vw;
   flex-direction: column;
   align-items: flex-end;
   position: absolute;
@@ -23,31 +24,10 @@ const TextWrapper = styled.div`
   right: 3%;
 
   @media (max-width: 1024px) {
-    top: 25%;
-  }
-
-  @media (max-width: 855px) {
-    height: 50vh;
-    top: 35%;
-  }
-
-  @media (max-width: 623px) {
-    top: 50%;
-  }
-
-  @media (max-width: 505px) {
-    top: 55%;
-  }
-
-  @media (max-width: 540px) {
-    top: 35%;
-  }
-
-  @media (max-width: 415px) {
     left: 50%;
-    top: 30%;
+    top: 50%;
     transform: translateX(-50%);
-    align-items: center;
+    align-items: flex-start;
   }
 `
 
@@ -63,19 +43,23 @@ const IntroText = styled.p<{ size?: string }>`
     font-size: ${({ size }) => (size ? "1.75rem" : "1.25rem")};
   }
 `
-const SpecialIntroText = styled.p<{ withBg: boolean }>`
+const SpecialIntroText = styled.p<{ withBg?: boolean }>`
   background: ${({ withBg }) => (withBg ? "#0e555b" : "")};
   color: ${({ withBg }) => (withBg ? "#e0e0e0" : "#0e555b")};
   text-align: end;
-  font-size: 5em;
+  font-size: 4.5vw;
+
+  @media (max-width: 1024px) {
+    font-size: 8vw;
+  }
+
   text-transform: uppercase;
   line-height: initial;
   letter-spacing: 0.3em;
   word-spacing: 9999999px;
   padding: 0 10px;
-  max-width: 45vw;
   border-bottom: ${({ withBg }) => (withBg ? "none" : "1px solid #0e555b")};
-`
+`;
 
 interface IDecorativeSection {
   className?: string

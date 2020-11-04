@@ -8,7 +8,14 @@ import Me from "./../../assets/ja.jpg"
 const Wrapper = styled.div`
   position: relative;
   text-align: center;
-  max-width: 200px;
+
+  @media (max-width: 570px) {
+    margin-top: 60px;
+  }
+
+  @media (min-width: 856px) {
+    margin-bottom: 40px;
+  }
 `
 
 const StyledPicture = styled.img`
