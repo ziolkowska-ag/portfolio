@@ -1,12 +1,14 @@
 import React from "react"
+import useWindowWidth from "../hooks/useWinWidth"
 import Layout from "../shared-components/Layout"
-import ContactContent from '../pages-content/contact/index';
-
+import ContactContent from "../pages-content/contact/index"
 
 export default function Contact() {
+  const windowSize = useWindowWidth()
+
   return (
     <Layout title="CONTACT" hideSocials>
-      <ContactContent />
+      {windowSize !== 0 && <ContactContent />}
     </Layout>
   )
 }

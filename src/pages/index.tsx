@@ -1,11 +1,14 @@
 import React from "react"
 import Layout from "../shared-components/Layout"
 import DecorativeSection from "./../pages-content/index/DecorativeSection"
+import useWindowWidth from "../hooks/useWinWidth"
 
 export default function Home() {
+  const windowSize = useWindowWidth()
+
   return (
     <Layout title="HOME">
-      <DecorativeSection />
+      {windowSize !== 0 && <DecorativeSection />}
     </Layout>
   )
 }
